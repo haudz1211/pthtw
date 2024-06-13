@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class HoatDongController {
     @Autowired
     private HoatDongService hoatDongService;
+    
     @GetMapping("/admin/hoatdongs")
     public String createView(Model model) {
         model.addAttribute("hoatDong", new HoatDong());
@@ -50,5 +51,8 @@ public class HoatDongController {
         model.addAttribute("hoatDong",        this.hoatDongService.getHoatDongByIDd(id));
         return "hoatdongs";
 
+        
+    
+    
     }
 }

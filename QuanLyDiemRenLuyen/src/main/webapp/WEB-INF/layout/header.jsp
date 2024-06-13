@@ -15,14 +15,21 @@
         </button>
         <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
-                <c:forEach items="${dieus}" var="c">
-                    <li class="nav-item">
-                        <c:url var="myUrl" value="/">
-                            <c:param name="dieuId" value="${c.id}"/>
-                        </c:url>
-                        <a class="nav-link" href="${myUrl}">Điều ${c.dieu}</a>
-                    </li>
-                </c:forEach>
+
+
+
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <c:forEach items="${dieus}" var="c">
+                            <c:url var="myUrl" value="/">
+                                <c:param name="dieuId" value="${c.id}"/>
+                            </c:url>
+                            <a class="dropdown-item" href="${myUrl}">Điều s${c.dieu}</a>
+                        </c:forEach>
+                    </div>
+                </div>
 
                 </li>
                 <li class="nav-item dropdown">

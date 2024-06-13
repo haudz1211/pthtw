@@ -27,12 +27,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
     "com.drl.repositories",
     "com.drl.services"
 })
-public class SpringSecurityConfig  extends WebSecurityConfigurerAdapter{
+public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Autowired
     private UserDetailsService userDetailsService;
-     
+
     @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
+    public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
     //them bean cloudinary
@@ -43,7 +44,7 @@ public class SpringSecurityConfig  extends WebSecurityConfigurerAdapter{
     }
 
     @Override
-    protected void configure(HttpSecurity http) 
+    protected void configure(HttpSecurity http)
             throws Exception {
         http.formLogin().loginPage("/login")
                 .usernameParameter("username")
@@ -51,14 +52,27 @@ public class SpringSecurityConfig  extends WebSecurityConfigurerAdapter{
         http.formLogin().defaultSuccessUrl("/").failureUrl("/login?error");
         http.logout().logoutSuccessUrl("/login");
         //Kiem tra loi
-        http.exceptionHandling().accessDeniedPage("/login?accessDenied");
+        //http.exceptionHandling().accessDeniedPage("/login?accessDenied");
         //Tranh chen dich vu ma doc  
-        http.authorizeRequests().antMatchers("/").permitAll()
-                .antMatchers("/admin/**").access("hasRole('ROLE_ASSISTANT')");
-//         http.authorizeRequests().antMatchers("/").permitAll()
-//                .antMatchers("/admin/**").access("hasRole('ROLE_CTSVOU')");
-        http.csrf().disable();
+        http
+                .authorizeRequests()
+                    .antMatchers("/").permitAll() // Cho phép tất cả truy cập đến trang chủ
+                    .antMatchers("/admin/**").hasAnyRole("ASSISTANT", "ADMIN") // Các URL dưới /admin yêu cầu vai trò ASSISTANT hoặc ADMIN
+                    .anyRequest().authenticated() // Tất cả các yêu cầu khác yêu cầu xác thực
+                .and()
+                .formLogin()
+                    .loginPage("/login")
+                    .permitAll()
+                .and()
+                    .logout()
+                    .logoutUrl("/logout")
+                    .logoutSuccessUrl("/login?logout")
+                    .permitAll()
+                .and()
+                    .exceptionHandling()
+                    .accessDeniedPage("/403") // Trang lỗi khi truy cập bị từ chối
+                .and()
+                .csrf().disable(); // Tạm thời vô hiệu hóa CSRF để dễ dàng cho mục đích thử nghiệm
     }
-    
-    
+
 }
