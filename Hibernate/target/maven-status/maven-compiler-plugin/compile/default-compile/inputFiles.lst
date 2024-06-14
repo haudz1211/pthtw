@@ -1,30 +1,30 @@
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\impl\env.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\HocKiNamHocRepository.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\ChuyenVienCtsv.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\impl\HocKiNamHocRepositoryImpl.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\BaiViet.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\StatsRepository.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\HoatDong.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\HocKiNamHoc.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\TroLySinhVien.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\impl\DieuRepositoryImpl.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\impl\LocalSessionFactoryBean.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\SinhVienRepository.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\hibernate\HiberateUtils.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\impl\HoatDongRepositoryImpl.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\impl\TroLySinhVienRepositoryImpl.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\Comment.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\NamHoc.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\DieuRepository.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\Dieu.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\HocKi.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\NguoiDung.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\KhoaRepository.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\HoatDongRepository.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\Lop.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\impl\StatsRepositoryImpl.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\Khoa.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\repositories\impl\KhoaRepositoryImpl.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\hibernate\Hibernate.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\SinhVienHoatDong.java
-C:\Users\trinh\Desktop\web\htwqldrl\Hibernate\src\main\java\com\drl\pojo\SinhVien.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\impl\env.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\HocKi.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\hibernate\Hibernate.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\Comment.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\Khoa.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\HocKiNamHocRepository.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\KhoaRepository.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\StatsRepository.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\impl\KhoaRepositoryImpl.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\BaiViet.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\impl\HocKiNamHocRepositoryImpl.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\impl\StatsRepositoryImpl.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\impl\DieuRepositoryImpl.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\HoatDongRepository.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\Lop.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\Dieu.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\NamHoc.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\SinhVien.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\hibernate\HiberateUtils.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\impl\TroLySinhVienRepositoryImpl.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\impl\HoatDongRepositoryImpl.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\impl\LocalSessionFactoryBean.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\SinhVienRepository.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\repositories\DieuRepository.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\SinhVienHoatDong.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\HoatDong.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\HocKiNamHoc.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\TroLySinhVien.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\NguoiDung.java
+C:\Users\trinh\Desktop\tuyển sinh\pthtw\Hibernate\src\main\java\com\drl\pojo\ChuyenVienCtsv.java
