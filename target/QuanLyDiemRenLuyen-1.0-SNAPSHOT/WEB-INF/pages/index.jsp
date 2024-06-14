@@ -11,8 +11,7 @@ Author     : DELL
 <div class="mt-1">
      <sec:authorize access="hasRole('ROLE_ASISTANT') or hasRole('ROLE_ADMIN')">
         <div>
-            <a href="<c:url value="/admin/hoatdongs" />" class="btn btn-info">Thêm hoạt động
-            </a>
+            <a href="<c:url value="/admin/hoatdongs" />" class="btn btn-info">Thêm hoạt động</a>
         </div>
     </sec:authorize>
 
@@ -62,26 +61,27 @@ Author     : DELL
     </table>
 </div>
 <script src="<c:url value="/js/script.js" />"></script>
+
 <script>
-            function deleteHoatDong(id) {
-                if (confirm("Bạn có chắc chắn muốn xóa hoạt động này?")) {
-                    // Thực hiện yêu cầu xóa hoạt động
-                    // Ví dụ sử dụng AJAX để gửi yêu cầu xóa
-                    $.ajax({
-                        url: '/admin/hoatdongs/' + id,
-                        type: 'DELETE',
-                        success: function (result) {
-                            // Xử lý sau khi xóa thành công
-                            alert("Đã xóa hoạt động thành công");
-                            location.reload();
-                        },
-                        error: function (err) {
-                            // Xử lý lỗi
-                            alert("Xóa hoạt động thất bại");
-                        }
-                    });
-                }
+    function deleteHoatDong(id) {
+    if (confirm("Bạn có chắc chắn muốn xóa hoạt động này?")) {
+        // Thực hiện yêu cầu xóa hoạt động
+        // Ví dụ sử dụng AJAX để gửi yêu cầu xóa
+        $.ajax({
+            url: '/admin/hoatdongs/' + id,
+            type: 'DELETE',
+            success: function (result) {
+                // Xử lý sau khi xóa thành công
+                alert("Đã xóa hoạt động thành công");
+                location.reload();
+            },
+            error: function (err) {
+                // Xử lý lỗi
+                alert("Xóa hoạt động thất bại");
             }
-</script>
+        });
+    }
+}
+</script>   
 
 

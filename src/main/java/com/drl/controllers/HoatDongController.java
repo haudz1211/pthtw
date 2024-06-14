@@ -6,6 +6,7 @@ package com.drl.controllers;
 
 import com.drl.pojo.HoatDong;
 import com.drl.services.HoatDongService;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,19 +23,23 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 @Controller
 public class HoatDongController {
+
     @Autowired
     private HoatDongService hoatDongService;
-    
+
     @GetMapping("/admin/hoatdongs")
     public String createView(Model model) {
+//        List<HoatDong> hoatDongs = hoatDongService.getAllHoatDongsSortedById();
+//        model.addAttribute("hoatDongs", hoatDongs);
         model.addAttribute("hoatDong", new HoatDong());
         return "hoatdongs";
     }
+
     @PostMapping("/admin/hoatdongs")
-    public String createHoatDong(@ModelAttribute (value = "hoatDong") @Valid HoatDong h,
+    public String createHoatDong(@ModelAttribute(value = "hoatDong") @Valid HoatDong h,
             BindingResult rs) { //1. ModelAttribute có 2 công dụng : + 1 là xài chung, 2 là gửi backing beans    Sau đó đóng gói lại đối tượng HoatDong h(Desireilizer)
         //Tất cả lõi sẽ hiện ở BindingResult rs
-        if(!rs.hasErrors()) {
+        if (!rs.hasErrors()) {
             try {
                 this.hoatDongService.addOrUpdate(h);
                 return "redirect:/";
@@ -45,14 +50,16 @@ public class HoatDongController {
         System.err.println(rs);
         return "hoatdongs";
     }
-    
-    @GetMapping("/admin/hoatdongs/{hoatdongId}")
-    public String updateView (Model model,@PathVariable(value = "hoatdongId")int id) {
-        model.addAttribute("hoatDong",        this.hoatDongService.getHoatDongByIDd(id));
-        return "hoatdongs";
 
-        
-    
-    
+    @GetMapping("/admin/hoatdongs/{hoatdongId}")
+    public String updateView(Model model, @PathVariable(value = "hoatdongId") int id) {
+        model.addAttribute("hoatDong", this.hoatDongService.getHoatDongByIDd(id));
+        return "hoatdongs";
+    }
+
+    @GetMapping("/admin/hoatdongs/{hoatdongId}/delete")
+    public String deleteHoatDong(@PathVariable(value = "hoatdongId") int id) {
+        this.hoatDongService.deleteHoatDong(id);
+        return "redirect:/admin/hoatdongs"; // Redirect về danh sách hoạt động sau khi xóa
     }
 }

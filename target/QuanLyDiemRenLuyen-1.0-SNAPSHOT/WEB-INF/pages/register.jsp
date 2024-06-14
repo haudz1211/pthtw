@@ -33,10 +33,10 @@
         </label>
         <br>
     </div>
-<!--    <div class="form-group mt-3">
+    <div class="form-group mt-3">
         <label for="img">Image</label>
         <form:input type="file" id="img" path="avatar" class="form-control" />
-    </di-->
+    </di
     <div class="form-group mt-3">
         <label for="email">Email</label>
         <form:input type="email" id="email" path="email" class="form-control" />

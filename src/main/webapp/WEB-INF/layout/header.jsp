@@ -8,9 +8,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm navbar-dark bg-red">
+   <a class="navbar-brand""><img width="300px" src="<c:url value="/images/logo.png"/>"></a>
+
     <div class="container-fluid">
-        <a class="navbar-brand""><img width="300px" src="<c:url value="/images/logo.png" />"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,14 +48,14 @@
                     </form>
                 </li>
 
-            <li class="navbar-nav ms-auto">
-                <c:choose>
-                    <c:when test="${pageContext.request.userPrincipal == null}">
+                <li class="navbar-nav ">
+                    <c:choose>
+                        <c:when test="${pageContext.request.userPrincipal == null}">
                         <li class="nav-item">
                             <a class="btn btn-info" href="<c:url value='/login' />">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-info ms-1" href="<c:url value='/register' />">Đăng ký</a>
+                            <a class="btn btn-info" href="<c:url value='/register' />">Đăng Ký</a>
                         </li>
                     </c:when>
                     <c:when test="${pageContext.request.userPrincipal != null}">
@@ -66,7 +67,7 @@
                         </li>
                     </c:when>
                 </c:choose>
-            </li>
+                </li>
             </ul>
 
         </div>

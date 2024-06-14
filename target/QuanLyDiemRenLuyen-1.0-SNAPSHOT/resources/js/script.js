@@ -1,8 +1,10 @@
-function deleteHoatDong (url) {
-    fetch(url, {method : 'delete'}).then(res => {
-        if(res.status ===204)
+function deleteHoatDong(url) {
+    fetch(url, {method: 'delete'}).then(res => {
+        if (res.status === 204)
             location.reload();
-        else 
+        else
             alert("ERROR");
     })
 }
+
+

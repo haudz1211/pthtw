@@ -4,6 +4,8 @@
  */
 package com.drl.configs;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -44,35 +46,56 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(HttpSecurity http)
-            throws Exception {
+    protected void configure(HttpSecurity http) throws Exception {
         http.formLogin().loginPage("/login")
                 .usernameParameter("username")
                 .passwordParameter("password");
         http.formLogin().defaultSuccessUrl("/").failureUrl("/login?error");
         http.logout().logoutSuccessUrl("/login");
         //Kiem tra loi
-        //http.exceptionHandling().accessDeniedPage("/login?accessDenied");
-        //Tranh chen dich vu ma doc  
-        http
-                .authorizeRequests()
-                    .antMatchers("/").permitAll() // Cho phép tất cả truy cập đến trang chủ
-                    .antMatchers("/admin/**").hasAnyRole("ASSISTANT", "ADMIN") // Các URL dưới /admin yêu cầu vai trò ASSISTANT hoặc ADMIN
-                    .anyRequest().authenticated() // Tất cả các yêu cầu khác yêu cầu xác thực
-                .and()
+        http.exceptionHandling().accessDeniedPage("/login?accessDenied");
+//        //Tranh chen dich vu ma doc  
+//        http
+//                .authorizeRequests()
+//                .antMatchers("/register").permitAll()
+//                .antMatchers("/login").permitAll()
+//                .antMatchers("/").permitAll() // Cho phép tất cả truy cập đến trang chủ
+//                .antMatchers("/admin/**").hasAnyRole("ASSISTANT", "ADMIN") // Các URL dưới /admin yêu cầu vai trò ASSISTANT hoặc ADMIN
+//                .anyRequest().authenticated() // Tất cả các yêu cầu khác yêu cầu xác thực
+//                .and()
+//                .formLogin()
+//                .loginPage("/login")
+//                .permitAll()
+//                .and()
+//                .logout()
+//                .logoutUrl("/logout")
+//                .logoutSuccessUrl("/login?logout")
+//                .permitAll()
+//                .and()
+//                .exceptionHandling()
+//                .accessDeniedPage("/403") // Trang lỗi khi truy cập bị từ chối
+//                .and()
+//                .csrf().disable(); // Tạm thời vô hiệu hóa CSRF để dễ dàng cho mục đích thử nghiệm
+//    }
+//Tranh chen dich vu ma doc  
+        http.authorizeRequests().antMatchers("/").permitAll()
+                .antMatchers("/admin/**").hasAnyRole("ASSISTANT", "ADMIN")
+                .anyRequest().authenticated().and()
                 .formLogin()
-                    .loginPage("/login")
-                    .permitAll()
-                .and()
-                    .logout()
-                    .logoutUrl("/logout")
-                    .logoutSuccessUrl("/login?logout")
-                    .permitAll()
-                .and()
-                    .exceptionHandling()
-                    .accessDeniedPage("/403") // Trang lỗi khi truy cập bị từ chối
-                .and()
-                .csrf().disable(); // Tạm thời vô hiệu hóa CSRF để dễ dàng cho mục đích thử nghiệm
+                .loginPage("/login")
+                .permitAll();
+        http.authorizeRequests().antMatchers("/").permitAll()
+                .antMatchers("/admin/**").access("hasRole('ROLE_CTSVOU')");
+        http.csrf().disable();
+    }
+
+    @Bean
+    public Cloudinary cloudinary() {
+        return new Cloudinary(ObjectUtils.asMap(
+                "cloud_name", "dfs6qhtdp",
+                "api_key", "783287636326811",
+                "api_secret", "I5yF-_c9P7bfo4rLhwoolpZ6kUE",
+                "secure", true));
     }
 
 }
