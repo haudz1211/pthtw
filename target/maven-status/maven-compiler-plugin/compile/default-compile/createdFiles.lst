@@ -7,6 +7,7 @@ com\drl\repositories\impl\DieuRepositoryImpl.class
 com\drl\pojo\HocKi.class
 com\drl\repositories\HoatDongRepository.class
 com\drl\services\impl\HoatDongServiceImpl.class
+com\drl\formatters\HoatDongFormatter.class
 com\drl\configs\SpringSecurityConfig.class
 com\drl\repositories\impl\TroLySinhVienRepositoryImpl.class
 com\drl\pojo\Dieu_.class
@@ -15,6 +16,7 @@ com\drl\pojo\HocKi_.class
 com\drl\repositories\DieuRepository.class
 com\drl\pojo\Khoa.class
 com\drl\formatters\DieuFormatter.class
+com\drl\services\impl\BaiVietServiceImpl.class
 com\drl\pojo\HocKiNamHoc.class
 com\drl\pojo\Lop.class
 com\drl\pojo\TroLySinhVien_.class
@@ -37,7 +39,9 @@ com\drl\pojo\HocKiNamHoc_.class
 com\drl\repositories\impl\StatsRepositoryImpl.class
 com\drl\repositories\TroLySinhVienRepository.class
 com\drl\configs\TilesConfig.class
+com\drl\services\BaiVietService.class
 com\drl\controllers\IndexController.class
+com\drl\repositories\BaiVietRepository.class
 com\drl\services\impl\NguoiDungServiceImpl.class
 com\drl\controllers\StatsController.class
 com\drl\services\HocKiNamHocService.class
@@ -51,6 +55,7 @@ com\drl\pojo\NguoiDung.class
 com\drl\services\impl\StatsServiceImpl.class
 com\drl\controllers\ApiHoatDongController.class
 com\drl\services\impl\TroLySinhVienServiceImpl.class
+com\drl\controllers\BaiVietController.class
 com\drl\pojo\Comment.class
 com\drl\repositories\impl\HoatDongRepositoryImpl.class
 com\drl\pojo\Khoa_.class
@@ -61,6 +66,7 @@ com\drl\pojo\HoatDong.class
 com\drl\controllers\HoatDongController.class
 com\drl\pojo\Dieu.class
 com\drl\repositories\HocKiNamHocRepository.class
+com\drl\repositories\impl\BaiVietRepositoryImpl.class
 com\drl\services\KhoaService.class
 com\drl\pojo\BaiViet.class
 com\drl\services\NguoiDungService.class

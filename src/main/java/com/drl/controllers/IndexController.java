@@ -29,7 +29,6 @@ public class IndexController {
    private DieuService dieuService;
     @Autowired
     private HoatDongService hoatDongService;
-    
     @Autowired
     private HocKiNamHocService hocKiNamHocService;
     @Autowired
@@ -47,7 +46,5 @@ public class IndexController {
       model.addAttribute("dieus", this.dieuService.getDieus());
       model.addAttribute("hocKiNamHocs", this.hocKiNamHocService.getHocKiNamHocs());
       model.addAttribute("khoas", this.khoaService.getKhoas());
-      model.addAttribute("troLys", this.troLySinhVienService.getTroLys());
-    
-}
+      model.addAttribute("troLys", this.troLySinhVienService.getTroLys());}
 }

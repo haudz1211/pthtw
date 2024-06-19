@@ -7,6 +7,7 @@ package com.drl.services.impl;
 import com.drl.pojo.HoatDong;
 import com.drl.repositories.HoatDongRepository;
 import com.drl.services.HoatDongService;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,4 @@ public class HoatDongServiceImpl implements HoatDongService{
     public void deleteHoatDong(int id) {
         this.hoatDongRepo.deleteHoatDong(id);
     }
-    
 }

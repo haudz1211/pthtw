@@ -15,10 +15,9 @@ import java.util.Map;
 public interface HoatDongService {
 
     List<HoatDong> getHoatDongs(Map<String, String> params);
-
     void addOrUpdate(HoatDong h);
     HoatDong getHoatDongByIDd(int id);
-    void deleteHoatDong(int id);
+    void deleteHoatDong(int id);  
 
 }
 
