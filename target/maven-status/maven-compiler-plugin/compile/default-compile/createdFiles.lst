@@ -12,6 +12,7 @@ com\drl\configs\SpringSecurityConfig.class
 com\drl\repositories\impl\TroLySinhVienRepositoryImpl.class
 com\drl\pojo\Dieu_.class
 com\drl\services\DieuService.class
+com\drl\formatters\StringToDateConverter.class
 com\drl\pojo\HocKi_.class
 com\drl\repositories\DieuRepository.class
 com\drl\pojo\Khoa.class

@@ -7,8 +7,10 @@ package com.drl.controllers;
 import com.drl.pojo.BaiViet;
 import com.drl.services.BaiVietService;
 import com.drl.services.HoatDongService;
+import java.util.Date;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -47,12 +50,20 @@ public class BaiVietController {
         System.err.println(rs);
         return "baiviets";
     }
+    
+   
 
     @GetMapping("/home/baiviets/{baivietId}")
     public String updateView(Model model, @PathVariable(value = "baivietId") int id) {
         model.addAttribute("baiViet", this.baiVietService.getBaiVietByIDd(id));
 
         return "baiviets";
-
     }
+     @PostMapping("/home/baiviets")
+     public String handleFormSubmit(@RequestParam("ngayTao") @DateTimeFormat(pattern = "yyyy-MM-dd") Date ngayTao, Model model) {
+        // Xử lý ngày ở đây
+        model.addAttribute("ngayTao", ngayTao);
+        return "baiviets";
+    }
+    
 }

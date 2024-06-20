@@ -51,7 +51,7 @@ public class BaiViet implements Serializable {
     @Column(name = "ten")
     private String ten;
     @Basic(optional = false)
-    @NotNull
+    //@NotNull
     @Column(name = "ngay_tao")
     @Temporal(TemporalType.TIMESTAMP)
     private Date ngayTao;

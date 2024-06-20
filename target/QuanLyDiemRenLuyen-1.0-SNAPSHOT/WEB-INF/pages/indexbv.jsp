@@ -11,7 +11,7 @@
 <div class="mt-1">
      <sec:authorize access="hasRole('ROLE_ASISTANT') or hasRole('ROLE_ADMIN')">
         <div>
-            <a href="<c:url value="/home/baiviets" />" class="btn btn-info">Thêm bài viết</a>
+            <a href="<c:url value="/home/baiviets" />" class="btn btn-info">Đăng ký hoạt động</a>
         </div>
     </sec:authorize>
 
