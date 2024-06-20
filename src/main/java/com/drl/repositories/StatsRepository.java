@@ -4,12 +4,20 @@
  */
 package com.drl.repositories;
 
+import com.drl.pojo.SinhVien;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author DELL
  */
 public interface StatsRepository {
-    List<Object[]> statsDiemRenLuyenTheoKhoa();
+
+    //List<Object[]> statsDiemRenLuyenTheoKhoa();
+    List<SinhVien> getSinhViens(Map<String, String> params);
+
+    SinhVien getSinhVienByIDd(int id);
+
+
 }

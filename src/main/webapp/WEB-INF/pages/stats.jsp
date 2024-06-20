@@ -17,18 +17,42 @@
                 <th>Họ</th>
                 <th>Tên</th>
                 <th>Năm Sinh</th>
+                <th>Giới Tính</th>
+                <th>Niên Khóa</th>
+                <th>Hoạt Động</th>
+                <th>Điểm</th>
                 <th>Lớp</th>
-                <th>Điểm rèn luyện</th>
+                <th>Năm Học</th>
                 <th></th>
             </tr>
-            <c:forEach items="${sinhViens}" var="c"> 
+            <c:forEach items="${}" var="c"> 
                 <tr>
                     <td>${c.id}</td>                 
                     <td>${c.ho}</td>
                     <td>${c.ten}</td>
                     <td>${c.namsinh}</td>
-                    <!--<td>${c.lopId.getTen()}</td>-->
-                    <td><a class="btn  btn-success" href="<c:url value="/sinhvien/${c[0]}" />">XEM CHI TIẾT</a></td>    
+                    <td>${c.gioiTinh}</td>
+                    <td>${c.nienKhoa}</td>
+                    <td>${c.sinhVienHoatDongId.getHoatDongId().getTen()}</td>
+                    <td>${c.sinhVienHoatDongId.getHoatDongId().getDiem()}</td>
+                    <td>${c.lopId.getTen()}</td>
+                    <td>${c.hocKiNamHocId.getNamHocId().getNamHoc()}</td>  
+                    <td>
+                        <c:url value="/stats/${c.id}" var="url"/>
+                    <td>
+                        <a class="btn  btn-success" href="<c:url value="/stats/${c[0]}" />">XEM CHI TIẾT</a>
+
+                    </td> 
+                    <!--                <sec:authorize access="hasRole('ROLE_ASISTANT') or hasRole('ROLE_ADMIN')">
+                                        <td>
+                                            <a class="btn  btn-success" href="<c:url value="/stats/${c[0]}" />">XEM CHI TIẾT</a>
+                                        </td>    
+                    
+                                        <td>
+                                            <a href="<c:url value="/stats/${c.id}" />" class="btn btn-info">Cập nhật</a>
+                                            <button onclick="deleteSinhVien('${c.id}')" class="btn btn-danger">Xóa</button>
+                                        </td>
+                                    </sec:authorize>-->
                 </tr>
             </c:forEach>
         </table>

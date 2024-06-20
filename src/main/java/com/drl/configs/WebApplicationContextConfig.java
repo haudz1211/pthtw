@@ -9,6 +9,8 @@ import com.cloudinary.utils.ObjectUtils;
 import com.drl.formatters.DieuFormatter;
 import com.drl.formatters.HocKiNamHocFormatter;
 import com.drl.formatters.KhoaFormatter;
+import com.drl.formatters.LopFormatter;
+import com.drl.formatters.SinhVienHoatDongFormatter;
 import com.drl.formatters.TroLySinhVienFormatter;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -82,6 +84,8 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
         registry.addFormatter(new DieuFormatter());
         registry.addFormatter(new HocKiNamHocFormatter());
         registry.addFormatter(new TroLySinhVienFormatter());
+        registry.addFormatter(new LopFormatter());
+        registry.addFormatter(new SinhVienHoatDongFormatter());
     }
 
     @Bean

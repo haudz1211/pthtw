@@ -75,7 +75,7 @@ public class HoatDong implements Serializable {
     private Set<BaiViet> baiVietSet;
     @OneToMany(mappedBy = "hoatDongId")
     private Set<SinhVienHoatDong> sinhVienHoatDongSet;
-
+    
     public HoatDong() {
     }
 
