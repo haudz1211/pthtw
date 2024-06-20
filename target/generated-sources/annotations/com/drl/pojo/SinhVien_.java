@@ -9,14 +9,18 @@ import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2024-06-20T21:40:13")
+@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2024-06-20T23:00:19")
 @StaticMetamodel(SinhVien.class)
 public class SinhVien_ { 
 
+    public static volatile SingularAttribute<SinhVien, Integer> namSinh;
     public static volatile SingularAttribute<SinhVien, NamHoc> namHocId;
+    public static volatile SingularAttribute<SinhVien, String> ho;
     public static volatile SingularAttribute<SinhVien, Integer> nienKhoa;
+    public static volatile SingularAttribute<SinhVien, Short> gioiTinh;
     public static volatile SingularAttribute<SinhVien, Integer> id;
     public static volatile SetAttribute<SinhVien, SinhVienHoatDong> sinhVienHoatDongSet;
+    public static volatile SingularAttribute<SinhVien, String> ten;
     public static volatile SingularAttribute<SinhVien, NguoiDung> nguoiDung;
     public static volatile SingularAttribute<SinhVien, Lop> lopId;
 

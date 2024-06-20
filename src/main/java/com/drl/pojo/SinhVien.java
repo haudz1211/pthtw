@@ -21,6 +21,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -36,6 +37,21 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "SinhVien.findById", query = "SELECT s FROM SinhVien s WHERE s.id = :id"),
     @NamedQuery(name = "SinhVien.findByNienKhoa", query = "SELECT s FROM SinhVien s WHERE s.nienKhoa = :nienKhoa")})
 public class SinhVien implements Serializable {
+
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "ho")
+    private String ho;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "ten")
+    private String ten;
+    @Column(name = "nam_sinh")
+    private Integer namSinh;
+    @Column(name = "gioi_tinh")
+    private Short gioiTinh;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -142,6 +158,38 @@ public class SinhVien implements Serializable {
     @Override
     public String toString() {
         return "com.drl.pojo.SinhVien[ id=" + id + " ]";
+    }
+
+    public String getHo() {
+        return ho;
+    }
+
+    public void setHo(String ho) {
+        this.ho = ho;
+    }
+
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
+    }
+
+    public Integer getNamSinh() {
+        return namSinh;
+    }
+
+    public void setNamSinh(Integer namSinh) {
+        this.namSinh = namSinh;
+    }
+
+    public Short getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(Short gioiTinh) {
+        this.gioiTinh = gioiTinh;
     }
     
 }
