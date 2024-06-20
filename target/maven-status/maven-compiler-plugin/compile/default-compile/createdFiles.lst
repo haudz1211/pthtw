@@ -64,6 +64,7 @@ com\drl\services\impl\KhoaServiceImpl.class
 com\drl\pojo\SinhVienHoatDong_.class
 com\drl\pojo\HoatDong.class
 com\drl\controllers\HoatDongController.class
+com\drl\controllers\IndexBVController.class
 com\drl\pojo\Dieu.class
 com\drl\repositories\HocKiNamHocRepository.class
 com\drl\repositories\impl\BaiVietRepositoryImpl.class
