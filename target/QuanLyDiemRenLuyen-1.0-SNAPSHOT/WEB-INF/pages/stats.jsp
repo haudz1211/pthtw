@@ -16,20 +16,20 @@
                 <th>Id Sinh Viên</th>
                 <th>Họ</th>
                 <th>Tên</th>
+                <th>Năm Sinh</th>
                 <th>Lớp</th>
-                <th>Khoa</th>
-                <td>Điểm rèn luyện</td>
+                <th>Điểm rèn luyện</th>
+                <th></th>
             </tr>
-            <c:forEach items="${statsTheoKhoa}" var="c"> 
-            <tr>
-                <td>${c[0]}</td>
-                <td>${c[1]}</td>
-                <td>${c[2]}</td>
-                <td>${c[3]}</td>
-                <td>${c[4]}</td>
-                <td>${c[5]}</td>
-                <td>${c[6]}</td>
-            </tr>
+            <c:forEach items="${sinhViens}" var="c"> 
+                <tr>
+                    <td>${c.id}</td>                 
+                    <td>${c.ho}</td>
+                    <td>${c.ten}</td>
+                    <td>${c.namsinh}</td>
+                    <!--<td>${c.lopId.getTen()}</td>-->
+                    <td><a class="btn  btn-success" href="<c:url value="/sinhvien/${c[0]}" />">XEM CHI TIẾT</a></td>    
+                </tr>
             </c:forEach>
         </table>
     </div>

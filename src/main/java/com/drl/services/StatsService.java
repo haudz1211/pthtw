@@ -4,6 +4,7 @@
  */
 package com.drl.services;
 
+import com.drl.pojo.SinhVien;
 import java.util.List;
 
 /**
@@ -11,5 +12,9 @@ import java.util.List;
  * @author DELL
  */
 public interface StatsService {
-     List<Object[]> statsDiemRenLuyenTheoKhoa();
+
+    List<Object[]> statsDiemRenLuyenTheoKhoa();
+
+    List<SinhVien> getSinhViens();
+//    public List<SinhVien> getSinhViens();
 }

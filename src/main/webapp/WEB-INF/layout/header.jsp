@@ -35,9 +35,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tính năng</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Bảng tin</a></li>
+                        <li><a class="dropdown-item btn-info" href="<c:url value="/indexbv" />">Bảng tin</a></li>
                         <li><a class="dropdown-item btn-info" href="<c:url value="/stats" />">Thống kê</a></li>
-                        <li><a class="dropdown-item" href="#">Hỏi đáp</a></li>
+                        <!--<li><a class="dropdown-item" href="#">Hỏi đáp</a></li>-->
                     </ul>
                 </li>
 

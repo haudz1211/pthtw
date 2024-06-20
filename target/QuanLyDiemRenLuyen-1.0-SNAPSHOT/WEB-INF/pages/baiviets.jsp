@@ -1,8 +1,3 @@
-<%-- 
-    Document   : baiviets
-    Created on : Jun 19, 2024, 12:19:53 PM
-    Author     : ADMIN
---%>
 
 <%-- 
     Document   : baiviets
@@ -28,7 +23,7 @@
         <label for="noidung">Mô tả nội dung</label>
     </div>
 
-    <div class="form-floating mb-3 mt-3">
+<!--    <div class="form-floating mb-3 mt-3">
         <form:select class="form-select" id="hoatDongId" path="hoatDongId">
             <c:forEach items="${HoatDongs}" var="c">
                 <c:choose>
@@ -42,7 +37,7 @@
             </c:forEach>
         </form:select>
         <label for="hoatDongId" class="form-label">Hoạt động</label>
-    </div>
+    </div>-->
 
 
     <div class="form-floating mb-3 mt-3">

@@ -4,6 +4,7 @@
  */
 package com.drl.services.impl;
 
+import com.drl.pojo.SinhVien;
 import com.drl.repositories.StatsRepository;
 import com.drl.services.StatsService;
 import java.util.List;
@@ -26,6 +27,11 @@ public class StatsServiceImpl implements StatsService {
     public List<Object[]> statsDiemRenLuyenTheoKhoa() {
         return this.statsRepo.statsDiemRenLuyenTheoKhoa();
 
+    }
+
+    @Override
+    public List<SinhVien> getSinhViens() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

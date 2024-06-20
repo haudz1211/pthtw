@@ -157,7 +157,7 @@ CREATE TABLE `hoat_dong` (
 
 LOCK TABLES `hoat_dong` WRITE;
 /*!40000 ALTER TABLE `hoat_dong` DISABLE KEYS */;
-INSERT INTO `hoat_dong` VALUES (1,'Hoạt động 1','Tham gia buổi workshop',5,3,6,1,1),(2,'Hoạt động 2','Tham gia ngày hội môi trường',5,3,5,2,2),(3,'Hoạt động 3','Trồng cây cho lớp',5,1,4,2,2),(4,'Hoáº¡t Äá»ng 4','QuyÃªn gÃ³p tiá»n táº·ng tráº» em',50,1,4,3,3),(5,'Hoạt động 5','Phòng chống ma túy sv',5,2,3,2,3),(6,'hoáº¡t Äá»ng 44Ã¡dd','hoáº¡t Äá»ng 4',5,2,1,1,6),(7,'hoáº¡t Äá»ng 456','hoáº¡t Äá»ng 456',10,2,3,1,5),(8,'hoáº¡t Äá»ng 44Ã¡dd','hoáº¡t Äá»ng 4',0,2,1,1,1),(9,'Háº­u','b',0,1,1,1,1),(10,'chien dich xuan tinh nguyen','di xuan tinh nguyen tinh An Giang',10,1,2,1,1),(11,'hoáº¡t Äá»ng 44Ã¡dd','hoáº¡t Äá»ng 4 adasda',0,3,1,1,1),(12,'Háº­u','b',0,4,1,1,9);
+INSERT INTO `hoat_dong` VALUES (1,'Hoạt động 1','Tham gia buổi workshop',5,3,6,1,1),(2,'Hoạt động 2','Tham gia ngày hội môi trường',5,3,5,2,2),(3,'Hoạt động 3','Trồng cây cho lớp',5,1,4,2,2),(4,'Hoáº¡t Äá»ng 4','QuyÃªn gÃ³p tiá»n táº·ng tráº» em',50,1,4,3,3),(5,'Hoạt động 5','Phòng chống ma túy sv',5,2,3,2,3),(6,'hoáº¡t Äá»ng 44Ã¡dd','hoáº¡t Äá»ng 4',5,2,1,1,6),(7,'hoáº¡t Äá»ng 456','hoáº¡t Äá»ng 456',10,2,3,1,5),(8,'hoáº¡t Äá»ng 44Ã¡dd','hoáº¡t Äá»ng 4',10,2,1,1,1),(9,'Háº­u','b',5,1,1,1,1),(10,'chien dich xuan tinh nguyen','di xuan tinh nguyen tinh An Giang',10,1,2,1,1),(11,'hoáº¡t Äá»ng 44Ã¡dd','hoáº¡t Äá»ng 4 adasda',5,3,1,1,1),(12,'HÃ¡ÂºÂ­u','b',5,4,1,1,9);
 /*!40000 ALTER TABLE `hoat_dong` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -311,7 +311,7 @@ CREATE TABLE `nguoi_dung` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -320,7 +320,7 @@ CREATE TABLE `nguoi_dung` (
 
 LOCK TABLES `nguoi_dung` WRITE;
 /*!40000 ALTER TABLE `nguoi_dung` DISABLE KEYS */;
-INSERT INTO `nguoi_dung` VALUES (1,'Lê','Tiến',2002,1,'https://i.imgur.com/32QtbJr.jpeg','Admin','abcmin123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_ADMIN'),(2,'Nguyễn Đào','Đào',2003,0,'https://i.imgur.com/twzwwNs.jpeg','TroLy','troly123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_ASISTANT'),(3,'Trần','My',2004,0,'https://i.imgur.com/twzwwNs.jpeg','SinhVien','sinhvien123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(4,'Nguyễn Văn','Dương',2004,1,'https://i.imgur.com/32QtbJr.jpeg','CTSVOU','ctsvou123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_CTSVOU'),(5,'Trần','Dương',2002,1,'https://i.imgur.com/32QtbJr.jpeg','SinhVienIT','sv123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(6,'Nguyễn','Mai',2003,0,'https://i.imgur.com/twzwwNs.jpeg','SinhVienKT','svkt123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(7,'Mai','Vy',2004,0,'https://i.imgur.com/twzwwNs.jpeg','SinhVienSH','svsh123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(8,'Mai','Chí',2004,1,'https://i.imgur.com/32QtbJr.jpeg','SinhVienCS','svcs123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(9,'Nguyễn','Ngọc',2003,0,'https://i.imgur.com/twzwwNs.jpeg','SinhVienCS1','svcs21@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT');
+INSERT INTO `nguoi_dung` VALUES (1,'Lê','Tiến',2002,1,'https://i.imgur.com/32QtbJr.jpeg','Admin','abcmin123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_ADMIN'),(2,'Nguyễn Đào','Đào',2003,0,'https://i.imgur.com/twzwwNs.jpeg','TroLy','troly123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_ASISTANT'),(3,'Trần','My',2004,0,'https://i.imgur.com/twzwwNs.jpeg','SinhVien','sinhvien123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(4,'Nguyễn Văn','Dương',2004,1,'https://i.imgur.com/32QtbJr.jpeg','CTSVOU','ctsvou123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_CTSVOU'),(5,'Trần','Dương',2002,1,'https://i.imgur.com/32QtbJr.jpeg','SinhVienIT','sv123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(6,'Nguyễn','Mai',2003,0,'https://i.imgur.com/twzwwNs.jpeg','SinhVienKT','svkt123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(7,'Mai','Vy',2004,0,'https://i.imgur.com/twzwwNs.jpeg','SinhVienSH','svsh123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(8,'Mai','Chí',2004,1,'https://i.imgur.com/32QtbJr.jpeg','SinhVienCS','svcs123@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(9,'Nguyễn','Ngọc',2003,0,'https://i.imgur.com/twzwwNs.jpeg','SinhVienCS1','svcs21@gmail.com','$2a$10$5X9k5N1sTc1/CjVH5XJoje3QMYijH3ETpgkox00R0MdPaJPPrf7wO','ROLE_STUDENT'),(10,'trinh','hau',2002,0,NULL,'hau12','hau@gmail.com','$2a$10$37TZO9gAHpco9JshZtXPnuqca87PsBM2CIZWi8hlhHmcxQhMmYVlC',NULL),(11,'Trá»nh ÄoÃ n','Háº­u',2003,0,NULL,'trinhhau','hauk@gmail.com','$2a$10$YCeFWwOlojga.xa45jddD.4SKPM1jTC6jWhRboTx0IPpopoU50HMS',NULL),(12,'Trá»nh ÄoÃ n','Háº­u',2003,0,NULL,'trinhhau12111','trinhdoanhau03@gmail.com','$2a$10$Jc7nYDBIHR51DsK9Pv6sw.5AeA1EYtK5aowiykxGTNOuuAPSSEr0K',NULL),(13,'Trá»nh ÄoÃ n','Háº­u3',2003,0,'ngá»§.png','hau3','jadopa@gamil.com','$2a$10$FGebtTzZ04bJwfzogyYX/.L29oaJcQcYDpvPouYyhifMno.lydUP.',NULL);
 /*!40000 ALTER TABLE `nguoi_dung` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,6 +333,10 @@ DROP TABLE IF EXISTS `sinh_vien`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sinh_vien` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `ho` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ten` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nam_sinh` int DEFAULT NULL,
+  `gioi_tinh` smallint DEFAULT NULL,
   `nienKhoa` int NOT NULL,
   `lop_id` int NOT NULL,
   `nam_hoc_id` int NOT NULL,
@@ -350,13 +354,11 @@ CREATE TABLE `sinh_vien` (
 
 LOCK TABLES `sinh_vien` WRITE;
 /*!40000 ALTER TABLE `sinh_vien` DISABLE KEYS */;
-INSERT INTO `sinh_vien` VALUES (1,2021,1,2),(2,2022,2,3),(3,2023,3,4),(4,2024,1,1);
+INSERT INTO `sinh_vien` VALUES (1,'Trịnh Đoàn ','Hậu',2003,0,2021,1,2),(2,'Diệp Khánh','Linh',2003,1,2021,2,2);
 /*!40000 ALTER TABLE `sinh_vien` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Table structure for table `sinh_vien_hoat_dong`
---
 
 DROP TABLE IF EXISTS `sinh_vien_hoat_dong`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -419,4 +421,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-12 12:37:09
+-- Dump completed on 2024-06-20 20:51:44

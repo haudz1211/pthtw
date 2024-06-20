@@ -24,12 +24,7 @@
             <th>Ngày Tạo</th>
             <th>Nội Dung</th>
             <th>Hoạt Động</th>
-<!--            <th>Điểm</th>
-            <th>Điều</th>
-            <th>Khoa</th>
-            <th>Học kì</th>
-            <th>Năm</th>
-            <th>Trợ lý tạo ra</th>-->
+
             <th></th>
         </tr>
 
