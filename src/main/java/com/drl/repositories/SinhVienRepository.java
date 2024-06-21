@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.drl.services;
+package com.drl.repositories;
 
-import com.drl.pojo.SinhVienHoatDong;
+import com.drl.pojo.SinhVien;
 import java.util.List;
 
 /**
  *
  * @author ADMIN
  */
-public interface SinhVienHoatDongService {
-    public List<SinhVienHoatDong> getSinhVienHoatDongs();
+public interface SinhVienRepository {
+           List<SinhVien> getSinhViens();
 
 }

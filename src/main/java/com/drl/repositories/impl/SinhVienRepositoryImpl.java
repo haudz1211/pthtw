@@ -4,8 +4,8 @@
  */
 package com.drl.repositories.impl;
 
-import com.drl.pojo.SinhVienHoatDong;
-import com.drl.repositories.SinhVienHoatDongRepository;
+import com.drl.pojo.SinhVien;
+import com.drl.repositories.SinhVienRepository;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -20,21 +20,17 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 @Transactional
-public class SinhVienHoatDongRepositoryImp implements SinhVienHoatDongRepository{
-     @Autowired
+public class SinhVienRepositoryImpl implements SinhVienRepository{
+
+    @Autowired
     private LocalSessionFactoryBean factory;
-
-   
-
     @Override
-    public List<SinhVienHoatDong> getSinhVienHoatDongs() {
-        Session s = this.factory.getObject().getCurrentSession();
-        Query query = s.createNamedQuery("SinhVienHoatDong.findAll");
+    public List<SinhVien> getSinhViens() {
+         Session s = this.factory.getObject().getCurrentSession();
+        Query query = s.createNamedQuery("SinhVien.findAll");
         return query.getResultList();
-
-    }
-    
     }
 
    
-
+    
+}

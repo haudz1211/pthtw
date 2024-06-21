@@ -5,6 +5,7 @@
 package com.drl.repositories.impl;
 
 import com.drl.pojo.SinhVien;
+import com.drl.pojo.SinhVienHoatDong;
 import com.drl.repositories.StatsRepository;
 import java.util.ArrayList;
 import org.hibernate.Session;
@@ -71,13 +72,71 @@ public class StatsRepositoryImpl implements StatsRepository {
 //    public List<Object[]> statsDiemRenLuyenTheoKhoa() {
 //    return  null;
 //    }
+//    @Override
+//    public List<SinhVien> getSinhViens(Map<String, String> params) {
+//        Session s = this.factory.getObject().openSession();
+//            CriteriaBuilder b = s.getCriteriaBuilder();//Muốn lấy điều kiện
+//            CriteriaQuery<SinhVien> q = b.createQuery(SinhVien.class);//Tạo những lệnh truy vấn đến bảng nào
+//
+//            Root r = q.from(SinhVien.class);//Muốn lấy trường (column)
+//            q.select(r);
+//            List<Predicate> predicates = new ArrayList<>();
+//            String kw = params.get("kw");
+//            if (kw != null && !kw.isEmpty()) {
+//                predicates.add(b.like(r.get("ten"), "%" + kw + "%")); //1% đầu tiên là format, %% đầu cuối tiếp theo là để phân biệt  %% trong sql
+//            }
+//            //Chon thu can muon loc hien tai chon lop
+//            String lopId = params.get("lopId");
+//            if (lopId != null && !lopId.isEmpty()) {
+//                predicates.add(b.equal(r.get("lopId"), Integer.valueOf(lopId)));
+//            }
+//            q.where(predicates.toArray(Predicate[]::new));
+//            
+//
+//            q.orderBy(b.desc(r.get("id")));
+//            Query query = s.createQuery(q);
+//
+//            String p = params.get("page");
+//            if (p != null && !p.isEmpty()) {
+//                int pageSize = Integer.parseInt(env.getProperty("sinhVien.pageSize"));
+//                int start = (Integer.parseInt(p) - 1) * pageSize;
+//                query.setFirstResult(start);
+//                query.setMaxResults(pageSize);
+//            }
+//            List<SinhVien> sinhViens = query.getResultList();
+//            return sinhViens;
+//    }
+//
+//    @Override
+//    public SinhVien getSinhVienByIDd(int id) {
+//         Session s = this.factory.getObject().getCurrentSession();
+//         return s.get(SinhVien.class, id);
+//    }
+//
+//    @Override
+//    public void addOrUpdate(SinhVien sv) {
+//         Session s = this.factory.getObject().getCurrentSession();
+//            if (sv.getId() > 0) {
+//                s.update(sv);
+//            } else {
+//                s.save(sv);
+//            }
+//    }
+//
+//    @Override
+//    public void deleteHoatDong(int id) {
+//         Session s = this.factory.getObject().getCurrentSession();
+//            SinhVien sv = this.getSinhVienByIDd(id);
+//            s.delete(sv);
+//    }
+
     @Override
-    public List<SinhVien> getSinhViens(Map<String, String> params) {
+    public List<SinhVienHoatDong> getSinhVienHoatDongs(Map<String, String> params) {
         Session s = this.factory.getObject().openSession();
             CriteriaBuilder b = s.getCriteriaBuilder();//Muốn lấy điều kiện
-            CriteriaQuery<SinhVien> q = b.createQuery(SinhVien.class);//Tạo những lệnh truy vấn đến bảng nào
+            CriteriaQuery<SinhVienHoatDong> q = b.createQuery(SinhVienHoatDong.class);//Tạo những lệnh truy vấn đến bảng nào
 
-            Root r = q.from(SinhVien.class);//Muốn lấy trường (column)
+            Root r = q.from(SinhVienHoatDong.class);//Muốn lấy trường (column)
             q.select(r);
             List<Predicate> predicates = new ArrayList<>();
             String kw = params.get("kw");
@@ -85,9 +144,9 @@ public class StatsRepositoryImpl implements StatsRepository {
                 predicates.add(b.like(r.get("ten"), "%" + kw + "%")); //1% đầu tiên là format, %% đầu cuối tiếp theo là để phân biệt  %% trong sql
             }
             //Chon thu can muon loc hien tai chon lop
-            String lopId = params.get("lopId");
-            if (lopId != null && !lopId.isEmpty()) {
-                predicates.add(b.equal(r.get("lopId"), Integer.valueOf(lopId)));
+            String sinhVienId = params.get("sinhVienId");
+            if (sinhVienId != null && !sinhVienId.isEmpty()) {
+                predicates.add(b.equal(r.get("sinhVienId"), Integer.valueOf(sinhVienId)));
             }
             q.where(predicates.toArray(Predicate[]::new));
             
@@ -97,19 +156,36 @@ public class StatsRepositoryImpl implements StatsRepository {
 
             String p = params.get("page");
             if (p != null && !p.isEmpty()) {
-                int pageSize = Integer.parseInt(env.getProperty("sinhVien.pageSize"));
+                int pageSize = Integer.parseInt(env.getProperty("sinhVienHoatDong.pageSize"));
                 int start = (Integer.parseInt(p) - 1) * pageSize;
                 query.setFirstResult(start);
                 query.setMaxResults(pageSize);
             }
-            List<SinhVien> sinhViens = query.getResultList();
-            return sinhViens;
+            List<SinhVienHoatDong> sinhVienHoatDongs = query.getResultList();
+            return sinhVienHoatDongs;
     }
 
     @Override
-    public SinhVien getSinhVienByIDd(int id) {
+    public void addOrUpdate(SinhVienHoatDong svhd) {
          Session s = this.factory.getObject().getCurrentSession();
-         return s.get(SinhVien.class, id);
+            if (svhd.getId() > 0) {
+                s.update(svhd);
+            } else {
+                s.save(svhd);
+            }
+    }
+
+    @Override
+    public SinhVienHoatDong getSinhVienHoatDongByIDd(int id) {
+        Session s = this.factory.getObject().getCurrentSession();
+         return s.get(SinhVienHoatDong.class, id);
+    }
+
+    @Override
+    public void deleteHoatDong(int id) {
+        Session s = this.factory.getObject().getCurrentSession();
+            SinhVienHoatDong svhd = this.getSinhVienHoatDongByIDd(id);
+            s.delete(svhd);
     }
 
 }

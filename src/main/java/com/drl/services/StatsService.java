@@ -4,7 +4,7 @@
  */
 package com.drl.services;
 
-import com.drl.pojo.SinhVien;
+import com.drl.pojo.SinhVienHoatDong;
 import java.util.List;
 import java.util.Map;
 
@@ -18,8 +18,12 @@ public interface StatsService {
 //
 //    List<SinhVien> getSinhViens();
 ////    public List<SinhVien> getSinhViens();
-    
-    List<SinhVien> getSinhViens(Map<String, String> params);
-        SinhVien getSinhVienByIDd(int id);
+    List<SinhVienHoatDong> getSinhVienHoatDongs(Map<String, String> params);
+
+    void addOrUpdate(SinhVienHoatDong svhd);
+
+    SinhVienHoatDong getSinhVienHoatDongByIDd(int id);
+
+    void deleteSinhVienHoatDong(int id);
 
 }

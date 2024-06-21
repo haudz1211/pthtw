@@ -5,6 +5,7 @@
 package com.drl.repositories;
 
 import com.drl.pojo.SinhVien;
+import com.drl.pojo.SinhVienHoatDong;
 import java.util.List;
 import java.util.Map;
 
@@ -15,9 +16,10 @@ import java.util.Map;
 public interface StatsRepository {
 
     //List<Object[]> statsDiemRenLuyenTheoKhoa();
-    List<SinhVien> getSinhViens(Map<String, String> params);
-
-    SinhVien getSinhVienByIDd(int id);
+    List<SinhVienHoatDong> getSinhVienHoatDongs(Map<String, String> params);
+    void addOrUpdate(SinhVienHoatDong svhd); 
+    SinhVienHoatDong getSinhVienHoatDongByIDd(int id);
+    void deleteHoatDong(int id);
 
 
 }

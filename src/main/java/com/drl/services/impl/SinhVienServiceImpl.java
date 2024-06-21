@@ -4,9 +4,9 @@
  */
 package com.drl.services.impl;
 
-import com.drl.pojo.SinhVienHoatDong;
-import com.drl.repositories.SinhVienHoatDongRepository;
-import com.drl.services.SinhVienHoatDongService;
+import com.drl.pojo.SinhVien;
+import com.drl.repositories.SinhVienRepository;
+import com.drl.services.SinhVienService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,14 +16,13 @@ import org.springframework.stereotype.Service;
  * @author ADMIN
  */
 @Service
-public class SinhVienHoatDonhServiceImpl implements SinhVienHoatDongService {
+public class SinhVienServiceImpl implements SinhVienService {
 
     @Autowired
-    private SinhVienHoatDongRepository sinhVienHoatDongRepo;
-
+    private SinhVienRepository sinhVienRepo;
     @Override
-    public List<SinhVienHoatDong> getSinhVienHoatDongs() {
-        return this.sinhVienHoatDongRepo.getSinhVienHoatDongs();
+    public List<SinhVien> getSinhViens() {
+        return this.sinhVienRepo.getSinhViens();
 
     }
 

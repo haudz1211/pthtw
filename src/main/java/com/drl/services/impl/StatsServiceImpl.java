@@ -5,6 +5,7 @@
 package com.drl.services.impl;
 
 import com.drl.pojo.SinhVien;
+import com.drl.pojo.SinhVienHoatDong;
 import com.drl.repositories.StatsRepository;
 import com.drl.services.StatsService;
 import java.util.List;
@@ -34,16 +35,37 @@ public class StatsServiceImpl implements StatsService {
 //    public List<SinhVien> getSinhViens() {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 //    }
+//    @Override
+//    public List<SinhVien> getSinhViens(Map<String, String> params) {
+//        return this.statsRepo.getSinhViens(params);
+//
+//    }
+//
+//    @Override
+//    public SinhVien getSinhVienByIDd(int id) {
+//        return this.statsRepo.getSinhVienByIDd(id);
+//
+//    }
+
     @Override
-    public List<SinhVien> getSinhViens(Map<String, String> params) {
-        return this.statsRepo.getSinhViens(params);
+    public List<SinhVienHoatDong> getSinhVienHoatDongs(Map<String, String> params) {
+                return this.statsRepo.getSinhVienHoatDongs(params);
 
     }
 
     @Override
-    public SinhVien getSinhVienByIDd(int id) {
-        return this.statsRepo.getSinhVienByIDd(id);
+    public void addOrUpdate(SinhVienHoatDong svhd) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
+    @Override
+    public SinhVienHoatDong getSinhVienHoatDongByIDd(int id) {
+        return this.statsRepo.getSinhVienHoatDongByIDd(id);
+    }
+
+    @Override
+    public void deleteSinhVienHoatDong(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
