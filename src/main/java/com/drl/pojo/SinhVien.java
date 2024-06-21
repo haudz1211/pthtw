@@ -35,16 +35,27 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "SinhVien.findAll", query = "SELECT s FROM SinhVien s"),
     @NamedQuery(name = "SinhVien.findById", query = "SELECT s FROM SinhVien s WHERE s.id = :id"),
+    @NamedQuery(name = "SinhVien.findByHo", query = "SELECT s FROM SinhVien s WHERE s.ho = :ho"),
+    @NamedQuery(name = "SinhVien.findByTen", query = "SELECT s FROM SinhVien s WHERE s.ten = :ten"),
+    @NamedQuery(name = "SinhVien.findByNamSinh", query = "SELECT s FROM SinhVien s WHERE s.namSinh = :namSinh"),
+    @NamedQuery(name = "SinhVien.findByGioiTinh", query = "SELECT s FROM SinhVien s WHERE s.gioiTinh = :gioiTinh"),
     @NamedQuery(name = "SinhVien.findByNienKhoa", query = "SELECT s FROM SinhVien s WHERE s.nienKhoa = :nienKhoa")})
 public class SinhVien implements Serializable {
-
+    
+ 
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
+       @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
     @Column(name = "ho")
     private String ho;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Size(min = 1, max = 45)
     @Column(name = "ten")
     private String ten;
@@ -52,15 +63,8 @@ public class SinhVien implements Serializable {
     private Integer namSinh;
     @Column(name = "gioi_tinh")
     private Short gioiTinh;
-
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id")
-    private Integer id;
-    @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "nienKhoa")
     private int nienKhoa;
     @JoinColumn(name = "lop_id", referencedColumnName = "id")
@@ -82,8 +86,12 @@ public class SinhVien implements Serializable {
         this.id = id;
     }
 
-    public SinhVien(Integer id, int nienKhoa) {
+    public SinhVien(Integer id, String ho, String ten,int namSinh, short gioiTinh, int nienKhoa) {
         this.id = id;
+        this.ho=ho;
+        this.ten=ten;
+        this.namSinh=namSinh;
+        this.gioiTinh=gioiTinh;
         this.nienKhoa = nienKhoa;
     }
 
@@ -94,7 +102,36 @@ public class SinhVien implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
+    public String getHo() {
+        return ho;
+    }
 
+    public void setHo(String ho) {
+        this.ho = ho;
+    }
+    
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
+    }
+     public int getNamSinh() {
+        return namSinh;
+    }
+
+    public void setNamSinh(int namSinh) {
+        this.namSinh = namSinh;
+    }
+     public short getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(short gioiTinh ) {
+        this.gioiTinh = gioiTinh;
+    }
+    
     public int getNienKhoa() {
         return nienKhoa;
     }
@@ -118,6 +155,7 @@ public class SinhVien implements Serializable {
     public void setNamHocId(NamHoc namHocId) {
         this.namHocId = namHocId;
     }
+
     public NguoiDung getNguoiDung() {
         return nguoiDung;
     }
@@ -160,36 +198,4 @@ public class SinhVien implements Serializable {
         return "com.drl.pojo.SinhVien[ id=" + id + " ]";
     }
 
-    public String getHo() {
-        return ho;
-    }
-
-    public void setHo(String ho) {
-        this.ho = ho;
-    }
-
-    public String getTen() {
-        return ten;
-    }
-
-    public void setTen(String ten) {
-        this.ten = ten;
-    }
-
-    public Integer getNamSinh() {
-        return namSinh;
-    }
-
-    public void setNamSinh(Integer namSinh) {
-        this.namSinh = namSinh;
-    }
-
-    public Short getGioiTinh() {
-        return gioiTinh;
-    }
-
-    public void setGioiTinh(Short gioiTinh) {
-        this.gioiTinh = gioiTinh;
-    }
-    
 }

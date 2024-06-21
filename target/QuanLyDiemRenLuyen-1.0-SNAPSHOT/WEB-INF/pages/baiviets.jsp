@@ -24,8 +24,13 @@
     </div>
 
 <!--    <div class="form-floating mb-3 mt-3">
+        
+        <label for="hoatDongId" class="form-label">Hoạt động</label>
+    </div>-->
+
+    <div class="form-floating mb-3 mt-3">
         <form:select class="form-select" id="hoatDongId" path="hoatDongId">
-            <c:forEach items="${HoatDongs}" var="c">
+            <c:forEach items="${hoatDongs}" var="c">
                 <c:choose>
                     <c:when test="${c.id==baiViet.hoatDongId.id}">
                         <option value="${c.id}" selected>${c.ten}</option>
@@ -37,11 +42,12 @@
             </c:forEach>
         </form:select>
         <label for="hoatDongId" class="form-label">Hoạt động</label>
-    </div>-->
+    </div>
 
 
     <div class="form-floating mb-3 mt-3">
-        <form:input type="date" path="ngayTao" min="1995-06-02"/>
+       
+        <form:input type="datetime-local" path="ngayTao" min="1995-06-02"/>
     </div>
 
     <div class="form-floating mb-3 mt-3">

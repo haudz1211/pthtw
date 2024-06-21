@@ -4,25 +4,26 @@
  */
 package com.drl.formatters;
 
-import com.drl.pojo.Dieu;
+import com.drl.pojo.SinhVien;
 import java.text.ParseException;
 import java.util.Locale;
 import org.springframework.format.Formatter;
 
 /**
  *
- * @author DELL
+ * @author ADMIN
  */
-public class DieuFormatter implements Formatter<Dieu> {
+public class SinhVienFormatter implements Formatter<SinhVien> {
 
     @Override
-    public String print(Dieu dieu, Locale locale) { // Đẩy đối tượng lên web
-        return String.valueOf(dieu.getId());
+    public String print(SinhVien sinhVien, Locale locale) {
+        return String.valueOf(sinhVien.getId());
+
     }
 
-    @Override // Lấy đối tượng trên web về -> Chuyển vè đối tượng
-    public Dieu parse(String id, Locale locale) throws ParseException {
-        Dieu c = new Dieu();
+    @Override
+    public SinhVien parse(String id, Locale locale) throws ParseException {
+         SinhVien c = new SinhVien();
         c.setId(Integer.parseInt(id));
         return c;
     }
