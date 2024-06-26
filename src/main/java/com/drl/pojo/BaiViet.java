@@ -23,6 +23,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -42,7 +43,7 @@ public class BaiViet implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
+    //@NotNull
     @Column(name = "id")
     private Integer id;
     @Basic(optional = false)
@@ -54,12 +55,13 @@ public class BaiViet implements Serializable {
     @NotNull
     @Column(name = "ngay_tao")
     @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date ngayTao;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 105)
     @Column(name = "noi_dung")
-    private String noiDung;
+    private String noiDung;    
     @JoinColumn(name = "hoat_dong_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private HoatDong hoatDongId;

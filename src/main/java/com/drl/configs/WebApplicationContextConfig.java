@@ -7,10 +7,11 @@ package com.drl.configs;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.drl.formatters.DieuFormatter;
+import com.drl.formatters.HoatDongFormatter;
 import com.drl.formatters.HocKiNamHocFormatter;
 import com.drl.formatters.KhoaFormatter;
 import com.drl.formatters.LopFormatter;
-import com.drl.formatters.SinhVienHoatDongFormatter;
+import com.drl.formatters.StringToHoatDongConverter;
 import com.drl.formatters.TroLySinhVienFormatter;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -84,7 +85,9 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
         registry.addFormatter(new DieuFormatter());
         registry.addFormatter(new HocKiNamHocFormatter());
         registry.addFormatter(new TroLySinhVienFormatter());
-        registry.addFormatter(new LopFormatter());        
+        registry.addFormatter(new LopFormatter());
+        registry.addFormatter(new HoatDongFormatter());
+       // registry.addConverter(new StringToHoatDongConverter());
     }
 
     @Bean

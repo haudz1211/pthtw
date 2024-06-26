@@ -20,6 +20,7 @@ E:\pthtw\src\main\java\com\drl\controllers\IndexController.java
 E:\pthtw\src\main\java\com\drl\formatters\DieuFormatter.java
 E:\pthtw\src\main\java\com\drl\services\impl\SinhVienServiceImpl.java
 E:\pthtw\src\main\java\com\drl\formatters\SinhVienHoatDongFormatter.java
+E:\pthtw\src\main\java\com\drl\formatters\StringToHoatDongConverter.java
 E:\pthtw\src\main\java\com\drl\pojo\HocKiNamHoc.java
 E:\pthtw\src\main\java\com\drl\pojo\Dieu.java
 E:\pthtw\src\main\java\com\drl\pojo\Comment.java

@@ -16,6 +16,7 @@ com\drl\services\DieuService.class
 com\drl\services\LopService.class
 com\drl\pojo\HocKi_.class
 com\drl\repositories\DieuRepository.class
+com\drl\formatters\StringToHoatDongConverter.class
 com\drl\pojo\Khoa.class
 com\drl\formatters\SinhVienHoatDongFormatter.class
 com\drl\formatters\DieuFormatter.class

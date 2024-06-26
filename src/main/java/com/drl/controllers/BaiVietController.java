@@ -6,7 +6,6 @@ package com.drl.controllers;
 
 import com.drl.pojo.BaiViet;
 import com.drl.services.BaiVietService;
-import com.drl.services.HoatDongService;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +30,9 @@ public class BaiVietController {
         model.addAttribute("baiViet", new BaiViet());
         return "baiviets";
     }
+    
+  
+    
 
     @PostMapping("/home/baiviets")
     public String createHoatDong(@ModelAttribute(value = "baiViet") @Valid BaiViet bv,
@@ -52,7 +54,15 @@ public class BaiVietController {
     public String updateView(Model model, @PathVariable(value = "baivietId") int id) {
         model.addAttribute("baiViet", this.baiVietService.getBaiVietByIDd(id));
 
-        return "baiviets";
-
-    }
+        return "baiviets";}
+    
+//     BaiViet baiViet = this.baiVietService.getBaiVietByIDd(id);
+//        if (baiViet != null) {
+//            model.addAttribute("baiViet", baiViet);
+//        } else {
+//            // Xử lý nếu không tìm thấy bài viết
+//            return "redirect:/home/baiviets";
+//        }
+//        return "baiviets";
+//    }
 }

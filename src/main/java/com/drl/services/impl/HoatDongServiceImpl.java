@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author DELL
  */
 @Service
+@Transactional
 public class HoatDongServiceImpl implements HoatDongService{
     @Autowired
     private HoatDongRepository hoatDongRepo;

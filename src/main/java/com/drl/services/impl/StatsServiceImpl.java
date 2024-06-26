@@ -55,7 +55,8 @@ public class StatsServiceImpl implements StatsService {
 
     @Override
     public void addOrUpdate(SinhVienHoatDong svhd) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                this.statsRepo.addOrUpdate(svhd);
+
     }
 
     @Override
@@ -65,7 +66,9 @@ public class StatsServiceImpl implements StatsService {
 
     @Override
     public void deleteSinhVienHoatDong(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//                this.statsRepo.deleteSinhVienHoatDong(id);
+
     }
+    
 
 }
