@@ -7,7 +7,7 @@ import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2024-06-21T16:30:09")
+@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2024-06-26T14:50:05")
 @StaticMetamodel(Lop.class)
 public class Lop_ { 
 

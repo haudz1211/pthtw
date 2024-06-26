@@ -51,6 +51,8 @@ public class Khoa implements Serializable {
     private Set<Lop> lopSet;
     @OneToMany(mappedBy = "khoaId")
     private Set<TroLySinhVien> troLySinhVienSet;
+    @OneToMany(mappedBy = "khoaId")
+    private Set<SinhVien> sinhVienSet;
 
     public Khoa() {
     }
@@ -131,5 +133,5 @@ public class Khoa implements Serializable {
     public String toString() {
         return "com.drl.pojo.Khoa[ id=" + id + " ]";
     }
-    
+
 }

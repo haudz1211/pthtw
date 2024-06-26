@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -41,6 +41,11 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "SinhVien.findByGioiTinh", query = "SELECT s FROM SinhVien s WHERE s.gioiTinh = :gioiTinh"),
     @NamedQuery(name = "SinhVien.findByNienKhoa", query = "SELECT s FROM SinhVien s WHERE s.nienKhoa = :nienKhoa")})
 public class SinhVien implements Serializable {
+
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "khoa_id")
+    private int khoaId;
     
  
     private static final long serialVersionUID = 1L;
@@ -196,6 +201,14 @@ public class SinhVien implements Serializable {
     @Override
     public String toString() {
         return "com.drl.pojo.SinhVien[ id=" + id + " ]";
+    }
+
+    public int getKhoaId() {
+        return khoaId;
+    }
+
+    public void setKhoaId(int khoaId) {
+        this.khoaId = khoaId;
     }
 
 }

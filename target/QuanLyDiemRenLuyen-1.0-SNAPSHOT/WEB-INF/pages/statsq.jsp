@@ -7,6 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <h1 class="text-center text-info">THỐNG KÊ BÁO CÁO</h1>
 <div class="row">
     <div class="col-mt-5 col-12">
@@ -17,24 +18,36 @@
                 <th>Tên</th>
                 <th>Lớp</th>
                 <th>Khoa</th>
-                <th>Điểm rèn luyện</th>
+                <th>Điểm Rèn Luyện</th>
                 <th></th>
             </tr>
-            <c:forEach items="${statsTheoKhoa}" var="c"> 
-                <tr>
-                    <td>${c[0]}</td>                 
-                    <td>${c[1]}</td>
-                    <td>${c[2]}</td>
-                    <td>${c[3]}</td>
-                    <td>${c[4]}</td>
-                    <td>${c[5]}</td>
-                    <td><a class="btn  btn-success" href="<c:url value="/sinhvien/${c[0]}" />">XEM CHI TIẾT</a></td>    
-                </tr>
-            </c:forEach>
+            <tbody>
+                <c:forEach items="${sinhVienHoatDongs}" var="c"> 
+                    <tr>
+                        <td>${c.id}</td>                        
+                        <td>${c.sinhVienId.getHo()}</td>
+                        <td>${c.sinhVienId.getTen()}</td>
+                        <td>${c.sinhVienId.getLopId().getTen()}</td>
+                        <td>${c.sinhVienId.getLopId().getKhoaId().getTen()}</td>
+                        <td>${c.hoatDongId.getDiem()}</td>
+
+                        <c:url value="/stats/${c.id}" var="url"/>
+
+                        <sec:authorize access="hasRole('ROLE_ASISTANT') or hasRole('ROLE_ADMIN')">
+                            <td>
+                                <a href="<c:url value="/stats/${c.id}" />" class="btn btn-info">Cập nhật</a>
+                                <button onclick="deleteSinhVienHoatDong('${c.id}')" class="btn btn-danger">Xóa</button>
+                            </td>
+                        </sec:authorize>
+                    </tr>
+                </c:forEach>
+            </tbody>
         </table>
     </div>
 </div>
+
 <hr>
+
 <h3 class="text-center text-info">THỐNG KÊ THEO THÀNH TÍCH CỦA CÁC KHOA</h3>
 <div class="row">
     <div class="col-md-5 col-12">
@@ -85,126 +98,6 @@
     </div>
 </div>
 <hr>
-<h3 class="text-center text-info">THỐNG KÊ THEO THÀNH TÍCH CÁC LỚP CỦA KHOA</h3>
-<div class="row">
-    <div class="col-md-5 col-12">
-        <form>
-            <div class="form-floating">
-                <select class="form-select" id="khoa-khoa" name="khoaId">
-                    <c:forEach items="${khoas}" var="c">
-                        <option value="${c.id}" >${c.ten}</option>
-                    </c:forEach>
-                </select>
-                <label for="khoa-khoa" class="form-label">CHỌN KHOA</label>
-            </div>
-
-
-            <div class="form-floating">
-                <select class="form-select" id="THANHTHICH-LOP" name="thanhtich">
-                    <option value="XUATSAC" >Xuất sắc</option>
-                    <option value="GIOI">Giỏi</option>
-                    <option value="KHA" >Khá</option>
-                </select>
-                <label for="THANHTHICH-LOP" class="form-label">CHỌN THÀNH TÍCH</label>
-            </div>
-            <div class="form-floating">
-                <select class="form-select" id="namHoc-lop" name="namHoc">
-                    <c:forEach items="${namHocs}" var="c">
-                        <option value="${c.namHoc}" >${c.namHoc}</option>
-                    </c:forEach>
-                </select>
-                <label for="namHoc-lop" class="form-label">CHỌN NĂM HỌC</label>
-            </div>
-            <div class="form-floating">
-                <select class="form-select" id="hocKi-lop" name="hocKi">
-                    <c:forEach items="${hocKis}" var="c">
-                        <option value="${c.hocKi}" >${c.hocKi}</option>
-                    </c:forEach>
-                </select>
-                <label for="hocKi-lop" class="form-label">CHỌN HỌC KÌ</label>
-            </div>
-            <div class="form-floating mb-3 mt-3">
-                <button class='btn btn-success'>Lọc</button>
-            </div>
-        </form>
-        <table class="table">
-            <tr>
-                <th>Lớp</th>
-                <th>Số lượng</th>
-            </tr>
-            <c:forEach items="${statsTheoThanhTichVaTheoLop}" var="c">
-                <tr>
-                    <td>${c[0]}</td>
-                    <td>${c[1]}</td>
-                </tr>
-            </c:forEach>
-        </table>
-    </div>
-    <div class="col-md-7 col-12">
-        <canvas id="myChart2"></canvas>
-    </div>
-</div>
-
-<h3 class="text-center text-info">THỐNG KÊ THEO THÀNH TÍCH CỦA LỚP</h3>
-<div class="row">
-    <div class="col-md-5 col-12">
-        <form>
-            <div class="form-floating">
-                <select class="form-select" id="khoa-lop" name="lopId">
-                    <c:forEach items="${lops}" var="c">
-                        <option value="${c.id}" >${c.ten}</option>
-                    </c:forEach>
-                </select>
-                <label for="khoa-lop" class="form-label">CHỌN LỚP</label>
-            </div>
-
-
-            <div class="form-floating">
-                <select class="form-select" id="THANHTHICH-LOP" name="thanhtich">
-                    <option value="XUATSAC" >Xuất sắc</option>
-                    <option value="GIOI">Giỏi</option>
-                    <option value="KHA" >Khá</option>
-                </select>
-                <label for="THANHTHICH-LOP" class="form-label">CHỌN THÀNH TÍCH</label>
-            </div>
-            <div class="form-floating">
-                <select class="form-select" id="namhoc-lop" name="namHoc">
-                    <c:forEach items="${namHocs}" var="c">
-                        <option value="${c.namHoc}" >${c.namHoc}</option>
-                    </c:forEach>
-                </select>
-                <label for="namhoc-lop" class="form-label">CHỌN NĂM HỌC</label>
-            </div>
-            <div class="form-floating">
-                <select class="form-select" id="hocKi-lop-" name="hocKi">
-                    <c:forEach items="${hocKis}" var="c">
-                        <option value="${c.hocKi}" >${c.hocKi}</option>
-                    </c:forEach>
-                </select>
-                <label for="hocKi-lop-" class="form-label">CHỌN HỌC KÌ</label>
-            </div>
-            <div class="form-floating mb-3 mt-3">
-                <button class='btn btn-success'>Lọc</button>
-            </div>
-        </form>
-        <table class="table">
-            <tr>
-                <th>Thành Tích</th>
-                <th>Số lượng</th>
-            </tr>
-            <c:forEach items="${statsDiemRenLuyenTheoThanhTich}" var="c">
-                <tr>
-                    <td>${c[0]}</td>
-                    <td>${c[1]}</td>
-                </tr>
-            </c:forEach>
-        </table>
-    </div>
-    <div class="col-md-7 col-12">
-        <canvas id="myChart3"></canvas>
-    </div>
-</div>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

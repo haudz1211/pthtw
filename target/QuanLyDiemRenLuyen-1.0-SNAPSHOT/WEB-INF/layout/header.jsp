@@ -37,6 +37,8 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item btn-info" href="<c:url value="/indexbv" />">Bảng tin</a></li>
                         <li><a class="dropdown-item btn-info" href="<c:url value="/stats" />">Thống kê</a></li>
+                                                <li><a class="dropdown-item btn-info" href="<c:url value="/" />">Hoạt Động</a></li>
+
                         <!--<li><a class="dropdown-item" href="#">Hỏi đáp</a></li>-->
                     </ul>
                 </li>
